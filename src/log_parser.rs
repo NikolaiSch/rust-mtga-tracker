@@ -1,6 +1,7 @@
 use std::fs;
 use crate::message_types::start_hook::StartHook;
 
+#[derive(Clone)]
 pub struct Log {
     pub raw_data: String,
 

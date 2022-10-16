@@ -2,7 +2,7 @@
 use serde::Deserialize;
 use serde_json::{from_str, from_value};
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, Copy, Clone)]
 pub struct StartHook {
     pub InventoryInfo: Inventory
 }
@@ -14,7 +14,7 @@ impl StartHook {
     }
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, Copy, Clone)]
 pub struct Inventory {
     pub Gems: u32,
     pub Gold: u32,
