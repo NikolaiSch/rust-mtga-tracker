@@ -1,6 +1,6 @@
 #[deny(non_snake_case)]
 use serde::Deserialize;
-use serde_json::{from_str, from_value};
+use serde_json::from_str;
 
 #[derive(Deserialize, Debug, Copy, Clone)]
 pub struct StartHook {
@@ -8,9 +8,8 @@ pub struct StartHook {
 }
 
 impl StartHook {
-    pub fn create_from_str(input: &str) -> Result<StartHook, ()> {
-        let d: StartHook = from_value(from_str(input).unwrap()).unwrap();
-        Ok(d)
+    pub fn new(input: &str) -> StartHook {
+        from_str(input).unwrap()
     }
 }
 
